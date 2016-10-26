@@ -14,6 +14,7 @@
     <meta name="apple-mobile-web-app-status-bar-style" content="#600090">
     <link rel="shortcut icon" href="http://icons.iconarchive.com/icons/blackvariant/button-ui-requests-15/256/Amazon-Kindle-icon.png">
     <link rel="alternate" type="application/atom+xml" title="Haojen" href="/atom.xml">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
     <link rel="stylesheet" href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.css">
     <title>
         
@@ -40,7 +41,7 @@
     }
 </style>
 <!-- hack iOS CSS :active style -->
-<body ontouchstart="">
+<body ontouchstart="" class="animated fadeIn">
 <!-- Navigation -->
 <nav class="navbar navbar-default navbar-custom navbar-fixed-top " id="nav-top" data-ispost = "true" data-istags="false
 " data-ishome = "false" >
@@ -53,7 +54,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="/">
+            <a class="navbar-brand animated pulse" href="/">
                 <span class="brand-logo">
                     Haojen
                 </span>
@@ -74,25 +75,30 @@
                     <li>
                         <a href="/">Home</a>
                     </li>
-
+					
                     
                         
                     
                         
-                        <li>
-                            <a href="/tags/">Tags</a>
-                        </li>
-                        
-                    
-                        
+							
                         <li>
                             <a href="/my-works/">My works</a>
                         </li>
-                        
+							
+						
                     
                         
                     
-
+                        
+							
+                        <li>
+                            <a href="/tags/">Tags</a>
+                        </li>
+							
+						
+                    
+					
+					
                 </ul>
             </div>
         </div>
@@ -264,13 +270,13 @@ HTML 套件提升约 590%， SVG 套件提升 1087% ，虽然我数学一直不�
                 <ul class="pager">
                     
                     <li class="previous">
-                        <a href="/ 2016/07/18/粒子效果源码剖析/" data-toggle="tooltip" data-placement="top"
+                        <a href="/2016/07/18/粒子效果源码剖析/" data-toggle="tooltip" data-placement="top"
                            title="粒子效果源码心得">&larr; Previous Post</a>
                     </li>
                     
                     
                     <li class="next">
-                        <a href="/ 2016/06/14/我对-Apple-WWDC-的猜想/" data-toggle="tooltip" data-placement="top"
+                        <a href="/2016/06/14/我对-Apple-WWDC-的猜想/" data-toggle="tooltip" data-placement="top"
                            title="我对 Apple WWDC 的猜想">Next Post &rarr;</a>
                     </li>
                     
@@ -493,7 +499,7 @@ HTML 套件提升约 590%， SVG 套件提升 1087% ，虽然我数学一直不�
 <script>
     // dynamic User by Hux
     var _gaId = 'UA-78633618-1';
-    var _gaDomain = 'null';
+    var _gaDomain = 'auto';
     // Originial
     (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
                 (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
