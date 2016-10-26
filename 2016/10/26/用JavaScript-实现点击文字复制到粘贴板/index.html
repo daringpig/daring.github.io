@@ -18,11 +18,11 @@
     <link rel="stylesheet" href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.css">
     <title>
         
-        Sun｜Haojen&#39;s blog
+        用 JavaScript 实现点击文字复制到粘贴板｜Haojen&#39;s blog
         
     </title>
 
-    <link rel="canonical" href="https://haojen.github.io/2016/09/20/Sun/">
+    <link rel="canonical" href="https://haojen.github.io/2016/10/26/用JavaScript-实现点击文字复制到粘贴板/">
 
     <!-- Bootstrap Core CSS -->
     <link rel="stylesheet" href="/css/bootstrap.min.css">
@@ -75,23 +75,36 @@
                     <li>
                         <a href="/">Home</a>
                     </li>
-
+					
                     
                         
                     
                         
+							
                         <li>
-                            <a href="/my-works/">My works</a>
+                            <a href="/archive/">Archive</a>
                         </li>
-                        
+							
+						
                     
                         
+							
                         <li>
                             <a href="/tags/">Tags</a>
                         </li>
-                        
+							
+						
                     
-
+                        
+							
+                        <li>
+                            <a href="/my-works/">My works</a>
+                        </li>
+							
+						
+                    
+					
+					
                 </ul>
             </div>
         </div>
@@ -132,14 +145,13 @@
 <!--only post-->
 
 
-<img class="wechat-title-img"
-     src="//oco8bvfr8.qnssl.com/blog-bg-black-run.jpg?imageView2/1/w/1400/h/400/interlace/1/q/80">
+<img class="wechat-title-img" src="http://static.leiphone.com/uploads/new/article/pic/201607/5785058497600.jpg">
 
 
 <style>
     
     header.intro-header {
-        background-image: url('//oco8bvfr8.qnssl.com/blog-bg-black-run.jpg?imageView2/1/w/1400/h/400/interlace/1/q/80')
+        background-image: url('http://static.leiphone.com/uploads/new/article/pic/201607/5785058497600.jpg');
     }
 
     
@@ -150,18 +162,20 @@
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 text-center">
                 <div class="post-heading">
-                    <h1>Sun</h1>
+                    <h1>用 JavaScript 实现点击文字复制到粘贴板</h1>
+                    
+                    <h2 class="subheading">日常</h2>
                     
                     <span class="meta">
                          作者 Haojen Ma
                         <span>
-                          日期 2016-09-20
+                          日期 2016-10-26
                          </span>
                     </span>
                     <div class="tags text-center">
                         
-                        <a class="tag" href="/tags/#诗词"
-                           title="诗词">诗词</a>
+                        <a class="tag" href="/tags/#JS"
+                           title="JS">JS</a>
                         
                     </div>
                 </div>
@@ -170,7 +184,7 @@
     </div>
     <div class="post-title-haojen">
         <span>
-            Sun
+            用 JavaScript 实现点击文字复制到粘贴板
         </span>
     </div>
 </header>
@@ -181,35 +195,32 @@
         <div class="row">
             <!-- Post Container -->
             <div class="col-lg-8 col-lg-offset-1 col-sm-9 post-container">
-                <p>First rays of light are coming through,</p>
-<p>Been several months since I saw that much blue ;</p>
-<p>Water a-rushing in the banks ,</p>
-<p>Freed from the ice it has the,</p>
-<p>song, the song to sing ,</p>
-<p>it has the song, the song to sing ;</p>
-<p>Matches inside your golden hair ,</p>
-<p>Catch all the light I'd fight to the death I swear ,</p>
-<p>As all the other mothers would, the land ,</p>
-<p>Stalked by winter, solace in a small warm hand ;</p>
-<p>We've got the sun, the sun to thank ;</p>
-<p>Early morning riser to the east ,</p>
-<p>Shadows fall behind me shiner never sleep ;</p>
-<p>'Til that day I'll bask in everything ,</p>
-<p>That you paint the arrows and the wheat ;</p>
-<p>We've got the sun, the sun to thank ;</p>
-<p>We've got the song, the song to sing ;</p>
+                <p>最近工作中遇到一个需求: 当点击 <strong>复制</strong> 按钮的时候, 将选中的文字复制到粘贴板上</p>
+<h3>核心代码</h3>
+<pre><code>// 获取 input 元素
+let input = document.querySelector('#showLink');
+input.focus();
+input.select();
+
+// 执行复制命令
+document.execCommand('Copy');
+</code></pre>
+<h3>document.execCommand() 介绍</h3>
+<p>在这段代码里, 其实最核心也让人陌生的应该就是 document.execCommand() 方法了, 该方法的大概用途是 <strong>对选中区域</strong> 进行一些操作
+有关这个方法的具体介绍, 请移步<a href="https://developer.mozilla.org/zh-CN/docs/Web/API/Document/execCommand" target="_blank" rel="external">这里</a></p>
 
                 <hr>
                 
                 <!-- 多说 Share start -->
                 <div class="ds-share"
                      style="text-align: right"
-                     data-thread-key="2016/09/20/Sun/"
-                     data-title="Sun"
-                     data-url="https://haojen.github.io/2016/09/20/Sun/"
-                     data-images=""
-                     data-content="First rays of light are coming through,
-Been se... | Haojen&#39;s blog ">
+                     data-thread-key="2016/10/26/用JavaScript-实现点击文字复制到粘贴板/"
+                     data-title="用 JavaScript 实现点击文字复制到粘贴板"
+                     data-url="https://haojen.github.io/2016/10/26/用JavaScript-实现点击文字复制到粘贴板/"
+                     data-images="https://haojen.github.io/2016/10/26/用JavaScript-实现点击文字复制到粘贴板/http://static.leiphone.com/uploads/new/article/pic/201607/5785058497600.jpg"
+                     data-content="最近工作中遇到一个需求: 当点击 复制 按钮的时候, 将选中的文字复制到粘贴板上
+核心代码
+/... | Haojen&#39;s blog ">
                     <div class="ds-share-inline">
                         <ul class="ds-share-icons-16">
                             <li data-toggle="ds-share-icons-more"><a class="ds-more" href="#">分享到：</a></li>
@@ -239,9 +250,9 @@ Been se... | Haojen&#39;s blog ">
                 <!-- 多说评论框 start -->
                 <div class="comment">
                     <div class="ds-thread"
-                         data-thread-key="2016/09/20/Sun/"
-                         data-title="Sun"
-                         data-url="https://haojen.github.io/2016/09/20/Sun/">
+                         data-thread-key="2016/10/26/用JavaScript-实现点击文字复制到粘贴板/"
+                         data-title="用 JavaScript 实现点击文字复制到粘贴板"
+                         data-url="https://haojen.github.io/2016/10/26/用JavaScript-实现点击文字复制到粘贴板/">
                     </div>
                 </div>
                 <!-- 多说评论框 end -->
@@ -253,7 +264,7 @@ Been se... | Haojen&#39;s blog ">
 
             <div class="hidden-xs col-sm-3 toc-col">
                 <div class="toc-wrap">
-                    
+                    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-text">核心代码</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-text">document.execCommand() 介绍</span></a></li></ol>
                 </div>
             </div>
         </div>
@@ -275,8 +286,8 @@ Been se... | Haojen&#39;s blog ">
                     </h5>
                     <div class="tags">
                         
-                        <a class="tag" href="/tags/#诗词"
-                           title="诗词">诗词</a>
+                        <a class="tag" href="/tags/#JS"
+                           title="JS">JS</a>
                         
                     </div>
                 </section>
