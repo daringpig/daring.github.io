@@ -18,11 +18,11 @@
     <link rel="stylesheet" href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.css">
     <title>
         
-        Haojen&#39;s blog
+        show keybroad - v0.0.2｜Haojen&#39;s blog
         
     </title>
 
-    <link rel="canonical" href="https://haojen.github.io/archives/2016/10/">
+    <link rel="canonical" href="https://haojen.github.io/2016/11/03/show-keybroad-使用说明/">
 
     <!-- Bootstrap Core CSS -->
     <link rel="stylesheet" href="/css/bootstrap.min.css">
@@ -43,7 +43,7 @@
 <!-- hack iOS CSS :active style -->
 <body ontouchstart="" class="animated fadeIn">
 <!-- Navigation -->
-<nav class="navbar navbar-default navbar-custom navbar-fixed-top " id="nav-top" data-ispost = "false" data-istags="false
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top " id="nav-top" data-ispost = "true" data-istags="false
 " data-ishome = "false" >
     <div class="container-fluid">
         <!-- Brand and toggle get grouped for better mobile display -->
@@ -134,258 +134,209 @@
 
 <!-- Main Content -->
 
+<!--only post-->
 
-<!-- Page Header -->
-<div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 visible-xs-block visible-sm-block">
-    <div class="row">
-        <header class="intro-header">
-            <div class="container">
-                <div class="site-heading text-center">
-                    <div class="about-me">
-                        <!--移动端头部显示-->
-                        <img src="//oco8bvfr8.qnssl.com/new_aman.jpg?imageView2/2/w/300/h/300/interlace/1/q/90"/>
-                        <h5><a href="/about/">Haojen Ma</a></h5>
-                        <p>求知若饥 虚心若愚</p>
+
+<img class="wechat-title-img"
+     src="//oco8bvfr8.qnssl.com/blog-bg-black-run.jpg?imageView2/1/w/1400/h/400/interlace/1/q/80">
+
+
+<style>
+    
+    header.intro-header {
+        background-image: url('//oco8bvfr8.qnssl.com/blog-bg-black-run.jpg?imageView2/1/w/1400/h/400/interlace/1/q/80')
+    }
+
+    
+</style>
+
+<header class="intro-header">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 text-center">
+                <div class="post-heading">
+                    <h1>show keybroad - v0.0.2</h1>
+                    
+                    <h2 class="subheading">使用说明</h2>
+                    
+                    <span class="meta">
+                         作者 Haojen Ma
+                        <span>
+                          日期 2016-11-03
+                         </span>
+                    </span>
+                    <div class="tags text-center">
+                        
                     </div>
                 </div>
             </div>
-        </header>
+        </div>
     </div>
-</div>
-<!-- Main Content -->
-<div class="container custom-haojen-container">
-    <!-- Post Container -->
-    <div class="row">
-        <div class="col-lg-8 col-lg-offset-1 col-md-8 col-md-offset-1 col-sm-12 col-xs-12 post-container">
-            <!-- Main Content -->
+    <div class="post-title-haojen">
+        <span>
+            show keybroad - v0.0.2
+        </span>
+    </div>
+</header>
 
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+            <!-- Post Container -->
+            <div class="col-lg-8 col-lg-offset-1 col-sm-9 post-container">
+                <blockquote>
+<p>自己写的一个类似支付宝输入密码的输入框</p>
+</blockquote>
+<p>使用教程:</p>
+<pre><code># html
+&lt;div id='rootElement'&gt;&lt;/div&gt;
 
+# javascript
 
-<div class="post-preview  "
-     style="background-image: url('http://static.leiphone.com/uploads/new/article/pic/201607/5785058497600.jpg')">
-    <a href="/2016/10/26/用JavaScript-实现点击文字复制到粘贴板/">
-        <h2 class="post-title">
-            用 JavaScript 实现点击文字复制到粘贴板
-        </h2>
-        <p class="post-meta">
-            <i class="fa fa-calendar" aria-hidden="true"></i> 2016-10-26
-        </p>
-        
-        <h3 class="post-subtitle">
-            日常
-        </h3>
-        
-        <div class="post-content-preview">
-            <p>
-                最近工作中遇到一个需求: 当点击 复制 按钮的时候, 将选中的文字复制到粘贴板上
-核心代码
-// 获取 input 元素
-let input = document.querySelector('#showLink');
-input.focus();
-input.select();
+showKbd.init({
+	el: '#rootElement', // 元素ID
+	run: function(value){} // 输入完毕后的回调函数, value 为用户输入的值,
+	style: {
+		size: 45 // box 的大小尺寸,默认为40
+	}
+})
+</code></pre>
 
-// 执行复..
-            </p>
-        </div>
-    </a>
+                <hr>
+                
+                <!-- 多说 Share start -->
+                <div class="ds-share"
+                     style="text-align: right"
+                     data-thread-key="2016/11/03/show-keybroad-使用说明/"
+                     data-title="show keybroad - v0.0.2"
+                     data-url="https://haojen.github.io/2016/11/03/show-keybroad-使用说明/"
+                     data-images=""
+                     data-content="
+自己写的一个类似支付宝输入密码的输入框
 
-</div>
-
-<hr>
-
-
-
-
-<!-- 翻页 pager -->
-
-<ul class="pager">
-    
-    
-</ul>
-
-
-        </div>
-        <!-- Sidebar Container -->
-        <div class="
-                col-lg-3 col-lg-offset-0
-                col-md-3 col-md-offset-0
-                col-sm-12
-                col-xs-12
-                sidebar-container
-            ">
-
-            <!-- About Me -->
-            <section class="visible-md visible-lg" style="padding: 0 18px">
-                <div class="short-about">
-                    <!--侧边栏头像-->
-                    
-                    <img src="//oco8bvfr8.qnssl.com/new_aman.jpg?imageView2/2/w/300/h/300/interlace/1/q/90"/>
-                    
-                    <h5><a href="/about/">Haojen Ma</a></h5>
-                    
-                    <p>求知若饥 虚心若愚</p>
-                    
+使用教程:
+# html
+&lt;div id='... | Haojen&#39;s blog ">
+                    <div class="ds-share-inline">
+                        <ul class="ds-share-icons-16">
+                            <li data-toggle="ds-share-icons-more"><a class="ds-more" href="#">分享到：</a></li>
+                            <li><a class="ds-wechat flat" href="javascript:void(0);" data-service="wechat">微信</a></li>
+                            <li><a class="ds-weibo flat" href="javascript:void(0);" data-service="weibo">微博</a></li>
+                            <li><a class="ds-douban flat" href="javascript:void(0);" data-service="douban">豆瓣</a></li>
+                        </ul>
+                        <div class="ds-share-icons-more">
+                        </div>
+                    </div>
                     <hr>
-                    <!-- SNS Link 社交 -->
-                    <ul class="list-inline">
-                        
-                        
-                        <li>
-                            <a target="_blank" href="https://twitter.com/ehazon">
-                                        <span class="fa-stack fa-lg">
-                                            <i class="fa fa-circle fa-stack-2x"></i>
-                                            <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
-                                        </span>
-                            </a>
-                        </li>
-                        
-                        
-                        <li>
-                            <a target="_blank" href="https://www.zhihu.com/people/megahertz">
-                                        <span class="fa-stack fa-lg">
-                                            <i class="fa fa-circle fa-stack-2x"></i>
-                                            <i class="fa  fa-stack-1x fa-inverse">知</i>
-                                        </span>
-                            </a>
-                        </li>
-                        
+                </div>
+                <!-- 多说 Share end-->
+                
 
-                        
-                        <li>
-                            <a target="_blank" href="http://weibo.com/haojen">
-                                        <span class="fa-stack fa-lg">
-                                            <i class="fa fa-circle fa-stack-2x"></i>
-                                            <i class="fa fa-weibo fa-stack-1x fa-inverse"></i>
-                                        </span>
-                            </a>
-                        </li>
-                        
+                <ul class="pager">
+                    
+                    
+                    <li class="next">
+                        <a href="/2016/10/26/用JavaScript-实现点击文字复制到粘贴板/" data-toggle="tooltip" data-placement="top"
+                           title="用 JavaScript 实现点击文字复制到粘贴板">Next Post &rarr;</a>
+                    </li>
+                    
+                </ul>
 
-                        
+                
+                <!-- 多说评论框 start -->
+                <div class="comment">
+                    <div class="ds-thread"
+                         data-thread-key="2016/11/03/show-keybroad-使用说明/"
+                         data-title="show keybroad - v0.0.2"
+                         data-url="https://haojen.github.io/2016/11/03/show-keybroad-使用说明/">
+                    </div>
+                </div>
+                <!-- 多说评论框 end -->
+                
 
-                        
-                        <li>
-                            <a target="_blank" href="https://github.com/haojen">
-                                        <span class="fa-stack fa-lg">
-                                            <i class="fa fa-circle fa-stack-2x"></i>
-                                            <i class="fa fa-github fa-stack-1x fa-inverse"></i>
-                                        </span>
-                            </a>
-                        </li>
-                        
+                
 
+            </div>
+
+            <div class="hidden-xs col-sm-3 toc-col">
+                <div class="toc-wrap">
+                    
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <!-- Sidebar Container -->
+
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                sidebar-container">
+
+                <!-- Featured Tags -->
+                
+                <section>
+                    <!-- no hr -->
+                    <h5 class="text-center">
+                        <a href="/tags/">FEATURED TAGS</a>
+                    </h5>
+                    <div class="tags">
+                        
+                    </div>
+                </section>
+                
+
+                <!-- Friends Blog -->
+                
+                <div style="margin-top: 20px;">
+                    <h5 class="text-center">FRIENDS</h5>
+                    <ul class="list-inline text-center">
+                        
+                        <li><a href="http://blog.kaijun.rocks">Kaijun&#39;s Blog</a></li>
+                        
+                        <li><a href="http://huangxuan.me">Hux Blog</a></li>
+                        
+                        <li><a href="#">Foo</a></li>
+                        
+                        <li><a href="#">Bar</a></li>
+                        
+                        <li><a href="#">Example Friends</a></li>
+                        
+                        <li><a href="#">It helps SEO</a></li>
                         
                     </ul>
                 </div>
-            </section>
-
-            <!-- Featured Tags  标签 -->
-            
-            <section>
-                <div class="tags">
-                    
-                    
-                    
-                    
-                    
-                    
-                    <a href="/tags/#Anisina" title="Anisina"
-                       rel="2">Anisina</a>
-                    
-                    
-                    
-                    <a href="/tags/#CSS" title="CSS"
-                       rel="4">CSS</a>
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    <a href="/tags/#JS" title="JS"
-                       rel="7">JS</a>
-                    
-                    
-                    
-                    
-                    
-                    <a href="/tags/#jQuery" title="jQuery"
-                       rel="2">jQuery</a>
-                    
-                    
-                    
-                    
-                    
-                    <a href="/tags/#HTML" title="HTML"
-                       rel="2">HTML</a>
-                    
-                    
-                    
-                    <a href="/tags/#Node.js" title="Node.js"
-                       rel="2">Node.js</a>
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    <a href="/tags/#诗词" title="诗词"
-                       rel="2">诗词</a>
-                    
-                    
-                    
-                    
-                </div>
-            </section>
-            
-
-            
-            <hr>
-            <h5 style="text-align: center;">Friends</h5>
-            <ul class="list-inline" style="text-align: center;">
                 
-                <li><a href="http://blog.kaijun.rocks" target="_blank">Kaijun&#39;s Blog</a></li>
-                
-                <li><a href="http://huangxuan.me" target="_blank">Hux Blog</a></li>
-                
-                <li><a href="#" target="_blank">Foo</a></li>
-                
-                <li><a href="#" target="_blank">Bar</a></li>
-                
-                <li><a href="#" target="_blank">Example Friends</a></li>
-                
-                <li><a href="#" target="_blank">It helps SEO</a></li>
-                
-            </ul>
-            
-
+            </div>
         </div>
+
     </div>
-</div>
+</article>
+
+
+<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+<script type="text/javascript">
+    // dynamic User by Hux
+    var _user = 'ehazon-github';
+
+    // duoshuo comment query.
+    var duoshuoQuery = {short_name: _user};
+    (function () {
+        var ds = document.createElement('script');
+        ds.type = 'text/javascript';
+        ds.async = true;
+        ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+        ds.charset = 'UTF-8';
+        (document.getElementsByTagName('head')[0]
+        || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+</script>
+<!-- 多说公共JS代码 end -->
+
+
+
+
 
 <!-- Footer -->
 <!-- Footer -->
