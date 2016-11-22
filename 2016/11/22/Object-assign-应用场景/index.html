@@ -189,23 +189,22 @@
 <p>语法: Object.assign(target, ...sources)</p>
 <p>下面是我在实际开发中, 运用 <strong>Object.assign</strong> 封装微信小应用的 wx.request 请求的场景</p>
 <pre><code>const _http = ( method, url, options ) =&gt; {
+return  new Promise( (resolve, reject) =&gt; {
+    let params = {
+        url,
+        method,
+        success(res) {
+            resolve(res)
+        },
+        fail(err){
+            reject(err)
+        }
+    };
 
-    return  new Promise( (resolve, reject) =&gt; {
-	        let params = {
-	            url,
-	            method,
-	            success(res) {
-	                resolve(res)
-	            },
-	            fail(err){
-	                reject(err)
-	            }
-	        };
-	
-			  if (options) params = Object.assign(params, options);
-	        
-	        wx.request(params);
-	    })
+	  if (options) params = Object.assign(params, options);
+    
+    wx.request(params);
+})
 };
 </code></pre>
 <p>在上面的那段函数中, <strong>Object.assign()</strong> 将 <strong>params</strong> 作为一个 <strong>target</strong>, 将 <strong>options</strong> 对象添加到当前的 <strong>target</strong> 中;</p>
