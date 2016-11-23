@@ -18,11 +18,11 @@
     <link rel="stylesheet" href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.css">
     <title>
         
-        Haojen&#39;s blog
+        让微信小程序支持 ES6 的 Promise 特性｜Haojen&#39;s blog
         
     </title>
 
-    <link rel="canonical" href="https://haojen.github.io/archives/2015/page/3/">
+    <link rel="canonical" href="https://haojen.github.io/2016/11/23/微信小程序-引入Promise-库/">
 
     <!-- Bootstrap Core CSS -->
     <link rel="stylesheet" href="/css/bootstrap.min.css">
@@ -43,7 +43,7 @@
 <!-- hack iOS CSS :active style -->
 <body ontouchstart="" class="animated fadeIn">
 <!-- Navigation -->
-<nav class="navbar navbar-default navbar-custom navbar-fixed-top " id="nav-top" data-ispost = "false" data-istags="false
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top " id="nav-top" data-ispost = "true" data-istags="false
 " data-ishome = "false" >
     <div class="container-fluid">
         <!-- Brand and toggle get grouped for better mobile display -->
@@ -134,300 +134,213 @@
 
 <!-- Main Content -->
 
+<!--only post-->
 
-<!-- Page Header -->
-<div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 visible-xs-block visible-sm-block">
-    <div class="row">
-        <header class="intro-header">
-            <div class="container">
-                <div class="site-heading text-center">
-                    <div class="about-me">
-                        <!--移动端头部显示-->
-                        <img src="//oco8bvfr8.qnssl.com/new_aman.jpg?imageView2/2/w/300/h/300/interlace/1/q/90"/>
-                        <h5><a href="/about/">Haojen Ma</a></h5>
-                        <p>求知若饥 虚心若愚</p>
+
+<img class="wechat-title-img" src="http://www.cinelounge.org/imgfull/210933.jpg">
+
+
+<style>
+    
+    header.intro-header {
+        background-image: url('http://www.cinelounge.org/imgfull/210933.jpg');
+    }
+
+    
+</style>
+
+<header class="intro-header">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 text-center">
+                <div class="post-heading">
+                    <h1>让微信小程序支持 ES6 的 Promise 特性</h1>
+                    
+                    <h2 class="subheading">“微信昨日更新自家的Web开发工具后无法使用原生 Promise，这篇教程教你引入第三方库来使用 Promise”</h2>
+                    
+                    <span class="meta">
+                         作者 Haojen Ma
+                        <span>
+                          日期 2016-11-23
+                         </span>
+                    </span>
+                    <div class="tags text-center">
+                        
+                        <a class="tag" href="/tags/#微信小程序"
+                           title="微信小程序">微信小程序</a>
+                        
                     </div>
                 </div>
             </div>
-        </header>
+        </div>
     </div>
-</div>
-<!-- Main Content -->
-<div class="container custom-haojen-container">
-    <!-- Post Container -->
-    <div class="row">
-        <div class="col-lg-8 col-lg-offset-1 col-md-8 col-md-offset-1 col-sm-12 col-xs-12 post-container">
-            <!-- Main Content -->
+    <div class="post-title-haojen">
+        <span>
+            让微信小程序支持 ES6 的 Promise 特性
+        </span>
+    </div>
+</header>
 
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+            <!-- Post Container -->
+            <div class="col-lg-8 col-lg-offset-1 col-sm-9 post-container">
+                <h2>遇到的问题</h2>
+<blockquote>
+<p>微信开发者工具更新版本后, 移除了开发者工具对 ES6 中 Promise 特性原生的支持, 理由是因为实体机器是不支持 Promise 的, 所以我们需要引入第三方的 Promise 库</p>
+</blockquote>
+<h3>微信更新日志</h3>
+<p><img src="http://o7bkkhiex.bkt.clouddn.com/wechat-upload-log.jpeg" alt="微信更新日志"></p>
+<h2>解决方案</h2>
+<h3>下载第三方库</h3>
+<p>在这里我引入的是 Bluebird 库, 先到 <a href="http://bluebirdjs.com/docs/getting-started.html" target="_blank" rel="external">Bluebird官网</a> 下载需要的文件</p>
+<p><img src="http://o7bkkhiex.bkt.clouddn.com/wechat-bluebird-download.jpeg" alt="bluebrid 下载"></p>
+<p>Bluebrid 提供了两种已经构建好的完整的 Promise 库文件, 未经压缩的 <code>bluebird.js</code> 和已压缩的 <code>bluebird.min.js</code> 文件, 当点击这两个文件的时候发现并没有下载, 只是显示出了源码, 这个时候可以全选复制, 然后在微信小程序的工程项目里新建一个js文件, 将其粘贴进去</p>
+<h3>引入第三方库</h3>
+<p><img src="http://o7bkkhiex.bkt.clouddn.com/wechat-import-promise.jpeg" alt="引入promise"></p>
+<p>以上我在微信小程序工程目录下的 <code>utils</code>文件夹里新建了一个 <code>promise.js</code> 文件, 然后在 <code>http.js</code> 的目录下用 ES6 的语法 <code>import Promise from './promise.js'</code> 完成对 bluebird 的引入, 这样就可以直接可以通过 <code>new Promise()</code>直接使用了, 使用跟 ES6 原生一样.</p>
+<h2>感谢❤️</h2>
+<p>感谢 Kevin Z. 没有他的帮助, 我会一直卡在某篇过时的教程, 仍旧无法成功使用第三方 Promise 库中 😄</p>
+<blockquote>
+<p>标题图片取自胡金铨先生1970年的作品 ——《侠女》</p>
+</blockquote>
 
+                <hr>
+                
+                <!-- 多说 Share start -->
+                <div class="ds-share"
+                     style="text-align: right"
+                     data-thread-key="2016/11/23/微信小程序-引入Promise-库/"
+                     data-title="让微信小程序支持 ES6 的 Promise 特性"
+                     data-url="https://haojen.github.io/2016/11/23/微信小程序-引入Promise-库/"
+                     data-images="https://haojen.github.io/2016/11/23/微信小程序-引入Promise-库/http://www.cinelounge.org/imgfull/210933.jpg"
+                     data-content="遇到的问题
 
-<div class="post-preview "
-     style="background-image: url('//oco8bvfr8.qnssl.com/16-8-new-bg.jpg?imageView2/1/w/800/h/300/interlace/1/q/80')">
-    <a href="/2015/10/24/Javascript权威指南-数组/">
-        <h2 class="post-title">
-            JavaScript 数组
-        </h2>
-        <p class="post-meta">
-            <i class="fa fa-calendar" aria-hidden="true"></i> 2015-10-24
-        </p>
-        
-        <h3 class="post-subtitle">
-            数组特性详解
-        </h3>
-        
-        <div class="post-content-preview">
-            <p>
-                数组是值的有序集合.每个值叫做一个元素, 而每个元素在数组中有一个位置,以数字表示,称为索引
-数组特性:
-
-1:JS中的数组是无类型的:这代表着数组元素可以是任意类型.
-2:JS中的数组是动态的:可以根据需要增长或缩减,并且在创建的时候无需声明固定的大小,也无需在数组发生变化的时候重新分配空间
-..
-            </p>
-        </div>
-    </a>
-
-</div>
-
-<hr>
-
-
-
-<div class="post-preview "
-     style="background-image: url('//oco8bvfr8.qnssl.com/16-8-new-bg.jpg?imageView2/1/w/800/h/300/interlace/1/q/80')">
-    <a href="/2015/10/20/CSS基础深入/">
-        <h2 class="post-title">
-            CSS 基础深入
-        </h2>
-        <p class="post-meta">
-            <i class="fa fa-calendar" aria-hidden="true"></i> 2015-10-20
-        </p>
-        
-        <h3 class="post-subtitle">
-            一些 CSS3 里面的新特性演练
-        </h3>
-        
-        <div class="post-content-preview">
-            <p>
-                border-radius
-利用border-radius 制作半个圆的方法：
-&lt;code&gt;
-element{
-width:50px;
-height:100px;
-border-radius:50px 0 0 50px;
-background:green;
-}
-&lt;/code&g..
-            </p>
-        </div>
-    </a>
-
-</div>
-
-<hr>
-
-
-
-
-<!-- 翻页 pager -->
-
-<ul class="pager">
-    
-    <li class="previous">
-        <a href="/archives/2015/page/2/">&larr; Newer Posts</a>
-    </li>
-    
-    
-</ul>
-
-
-        </div>
-        <!-- Sidebar Container -->
-        <div class="
-                col-lg-3 col-lg-offset-0
-                col-md-3 col-md-offset-0
-                col-sm-12
-                col-xs-12
-                sidebar-container
-            ">
-
-            <!-- About Me -->
-            <section class="visible-md visible-lg" style="padding: 0 18px">
-                <div class="short-about">
-                    <!--侧边栏头像-->
-                    
-                    <img src="//oco8bvfr8.qnssl.com/new_aman.jpg?imageView2/2/w/300/h/300/interlace/1/q/90"/>
-                    
-                    <h5><a href="/about/">Haojen Ma</a></h5>
-                    
-                    <p>求知若饥 虚心若愚</p>
-                    
+微信开发者工具更新版本后, 移除了开发者工具对 ES6 中 Promise 特性... | Haojen&#39;s blog ">
+                    <div class="ds-share-inline">
+                        <ul class="ds-share-icons-16">
+                            <li data-toggle="ds-share-icons-more"><a class="ds-more" href="#">分享到：</a></li>
+                            <li><a class="ds-wechat flat" href="javascript:void(0);" data-service="wechat">微信</a></li>
+                            <li><a class="ds-weibo flat" href="javascript:void(0);" data-service="weibo">微博</a></li>
+                            <li><a class="ds-douban flat" href="javascript:void(0);" data-service="douban">豆瓣</a></li>
+                        </ul>
+                        <div class="ds-share-icons-more">
+                        </div>
+                    </div>
                     <hr>
-                    <!-- SNS Link 社交 -->
-                    <ul class="list-inline">
-                        
-                        
-                        <li>
-                            <a target="_blank" href="https://twitter.com/ehazon">
-                                        <span class="fa-stack fa-lg">
-                                            <i class="fa fa-circle fa-stack-2x"></i>
-                                            <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
-                                        </span>
-                            </a>
-                        </li>
-                        
-                        
-                        <li>
-                            <a target="_blank" href="https://www.zhihu.com/people/megahertz">
-                                        <span class="fa-stack fa-lg">
-                                            <i class="fa fa-circle fa-stack-2x"></i>
-                                            <i class="fa  fa-stack-1x fa-inverse">知</i>
-                                        </span>
-                            </a>
-                        </li>
-                        
+                </div>
+                <!-- 多说 Share end-->
+                
 
-                        
-                        <li>
-                            <a target="_blank" href="http://weibo.com/haojen">
-                                        <span class="fa-stack fa-lg">
-                                            <i class="fa fa-circle fa-stack-2x"></i>
-                                            <i class="fa fa-weibo fa-stack-1x fa-inverse"></i>
-                                        </span>
-                            </a>
-                        </li>
-                        
+                <ul class="pager">
+                    
+                    
+                    <li class="next">
+                        <a href="/2016/11/22/Object-assign-应用场景/" data-toggle="tooltip" data-placement="top"
+                           title="Object.assign 应用场景">Next Post &rarr;</a>
+                    </li>
+                    
+                </ul>
 
-                        
+                
+                <!-- 多说评论框 start -->
+                <div class="comment">
+                    <div class="ds-thread"
+                         data-thread-key="2016/11/23/微信小程序-引入Promise-库/"
+                         data-title="让微信小程序支持 ES6 的 Promise 特性"
+                         data-url="https://haojen.github.io/2016/11/23/微信小程序-引入Promise-库/">
+                    </div>
+                </div>
+                <!-- 多说评论框 end -->
+                
 
-                        
-                        <li>
-                            <a target="_blank" href="https://github.com/haojen">
-                                        <span class="fa-stack fa-lg">
-                                            <i class="fa fa-circle fa-stack-2x"></i>
-                                            <i class="fa fa-github fa-stack-1x fa-inverse"></i>
-                                        </span>
-                            </a>
-                        </li>
-                        
+                
 
+            </div>
+
+            <div class="hidden-xs col-sm-3 toc-col">
+                <div class="toc-wrap">
+                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#undefined"><span class="toc-text">遇到的问题</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-text">微信更新日志</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#undefined"><span class="toc-text">解决方案</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-text">下载第三方库</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-text">引入第三方库</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#undefined"><span class="toc-text">感谢❤️</span></a></li></ol>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <!-- Sidebar Container -->
+
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                sidebar-container">
+
+                <!-- Featured Tags -->
+                
+                <section>
+                    <!-- no hr -->
+                    <h5 class="text-center">
+                        <a href="/tags/">FEATURED TAGS</a>
+                    </h5>
+                    <div class="tags">
+                        
+                        <a class="tag" href="/tags/#微信小程序"
+                           title="微信小程序">微信小程序</a>
+                        
+                    </div>
+                </section>
+                
+
+                <!-- Friends Blog -->
+                
+                <div style="margin-top: 20px;">
+                    <h5 class="text-center">FRIENDS</h5>
+                    <ul class="list-inline text-center">
+                        
+                        <li><a href="http://blog.kaijun.rocks">Kaijun&#39;s Blog</a></li>
+                        
+                        <li><a href="http://huangxuan.me">Hux Blog</a></li>
+                        
+                        <li><a href="#">Foo</a></li>
+                        
+                        <li><a href="#">Bar</a></li>
+                        
+                        <li><a href="#">Example Friends</a></li>
+                        
+                        <li><a href="#">It helps SEO</a></li>
                         
                     </ul>
                 </div>
-            </section>
-
-            <!-- Featured Tags  标签 -->
-            
-            <section>
-                <div class="tags">
-                    
-                    
-                    
-                    
-                    
-                    
-                    <a href="/tags/#Anisina" title="Anisina"
-                       rel="2">Anisina</a>
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    <a href="/tags/#CSS" title="CSS"
-                       rel="4">CSS</a>
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    <a href="/tags/#JS" title="JS"
-                       rel="7">JS</a>
-                    
-                    
-                    
-                    
-                    
-                    <a href="/tags/#jQuery" title="jQuery"
-                       rel="2">jQuery</a>
-                    
-                    
-                    
-                    
-                    
-                    <a href="/tags/#HTML" title="HTML"
-                       rel="2">HTML</a>
-                    
-                    
-                    
-                    <a href="/tags/#Node.js" title="Node.js"
-                       rel="2">Node.js</a>
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    <a href="/tags/#诗词" title="诗词"
-                       rel="2">诗词</a>
-                    
-                    
-                    
-                    
-                    
-                    
-                </div>
-            </section>
-            
-
-            
-            <hr>
-            <h5 style="text-align: center;">Friends</h5>
-            <ul class="list-inline" style="text-align: center;">
                 
-                <li><a href="http://blog.kaijun.rocks" target="_blank">Kaijun&#39;s Blog</a></li>
-                
-                <li><a href="http://huangxuan.me" target="_blank">Hux Blog</a></li>
-                
-                <li><a href="#" target="_blank">Foo</a></li>
-                
-                <li><a href="#" target="_blank">Bar</a></li>
-                
-                <li><a href="#" target="_blank">Example Friends</a></li>
-                
-                <li><a href="#" target="_blank">It helps SEO</a></li>
-                
-            </ul>
-            
-
+            </div>
         </div>
+
     </div>
-</div>
+</article>
+
+
+<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+<script type="text/javascript">
+    // dynamic User by Hux
+    var _user = 'ehazon-github';
+
+    // duoshuo comment query.
+    var duoshuoQuery = {short_name: _user};
+    (function () {
+        var ds = document.createElement('script');
+        ds.type = 'text/javascript';
+        ds.async = true;
+        ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+        ds.charset = 'UTF-8';
+        (document.getElementsByTagName('head')[0]
+        || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+</script>
+<!-- 多说公共JS代码 end -->
+
+
+
+
 
 <!-- Footer -->
 <!-- Footer -->
